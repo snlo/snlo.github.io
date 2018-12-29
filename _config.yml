@@ -16,11 +16,11 @@
 title: SNLO
 email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hello Health.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+  APP.
+baseurl: "/APP" # the subpath of your site, e.g. /blog
+url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: snlo
+github_username:  snlo
 
 # Build settings
 markdown: kramdown
