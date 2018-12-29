@@ -1,18 +1,9 @@
 ---
 layout: page
 title: 关于我
-permalink: /关于我/
+permalink: /关于/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+关于的内容
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+可以在GitHub上找到我:[SNLO](https://github.com/snlo)/[FMMI](https://github.com/FMMI)
