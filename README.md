@@ -1,6 +1,6 @@
-# Hux Blog
+# SNLO Blog
 
-### [View Live Hux Blog &rarr;](https://huangxuan.me)
+### [View Live Hux Blog &rarr;](https://snlo.app)
 
 ![](http://huangxuan.me/img/blog-desktop.jpg)
 
