@@ -13,20 +13,60 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: SNLO
+title: SNLO 
+SEOTitle: snlo的博客 | snlo 
+header-img: img/home-bg.png
 email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  APP
+  APP描述
+keyword: "iOS, APP"
+url: "https://snlo.app/" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: snlo
-github_username:  snlo
+
+# avatar and Favicon
+# avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
+favicon: favicon.ico
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Web Developer <br/> 未知的我们向着未知的世界出发"
+sidebar-avatar: /img/avatar.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+# SNS settings
+RSS: false
+weibo_username:  snlo
+zhihu_username:  snlo
+github_username: snlo
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: db0469bd2240fc017d78                            #生成的clientID
+  clientSecret: 62b65779044955f7d44eacd13a748e4fc3fd2e70    #生成的clientSecret
+  repo: snlo.github.io    #仓库名称
+  owner: snlo    #github用户名
+  admin: snlo
+  # distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+
+# Friends
+friends: [{
+  title: "wfm's github",
+  href: "https://github.com/wfm19970"
+}]
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
