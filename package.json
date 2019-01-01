@@ -1,0 +1,22 @@
+{
+  "name": "snlo.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snlo/snlo.github.io.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "snlo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snlo/snlo.github.io/issues"
+  },
+  "homepage": "https://github.com/snlo/snlo.github.io#readme"
+}

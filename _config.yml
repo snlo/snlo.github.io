@@ -30,7 +30,7 @@ favicon: favicon.ico
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Web Developer <br/> 未知的我们向着未知的世界出发"
+sidebar-about-description: "APP Developer <br/> 未知的我们向着未知的世界出发"
 sidebar-avatar: /img/avatar.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -39,9 +39,8 @@ featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 # SNS settings
-RSS: false
-weibo_username:  snlo
-zhihu_username:  snlo
+weibo_username:  snloveydus
+zhihu_username:  SNLO
 github_username: snlo
 
 # Build settings
@@ -49,7 +48,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-archives
 
 # Gitalk
 gitalk:
@@ -64,8 +63,8 @@ gitalk:
 
 # Friends
 friends: [{
-  title: "wfm's github",
-  href: "https://github.com/wfm19970"
+  title: "snlo's github",
+  href: "https://github.com/snlo"
 }]
 
 # Exclude from processing.
