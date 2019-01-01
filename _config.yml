@@ -20,7 +20,7 @@ email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   APP描述
 keyword: "iOS, APP"
-url: "https://snlo.app/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Publish posts or collection documents with a future date.
@@ -97,7 +97,7 @@ featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#FFC125"
+chrome-tab-theme-color: "#F6F6F6"
 service-worker: true
 
 # MathJax rendering for layout:page (e.g. post preview)

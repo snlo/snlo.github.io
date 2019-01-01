@@ -4,7 +4,7 @@ title:      "Hello 2019"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2019-01-02 12:00:00
 author:     "SNLO"
-header-img: "img/post-bg-apple-event-2015jpg"
+header-img: "img/post-bg-apple-event-2015.jpg"
 catalog: true
 tags:
     - 生活
