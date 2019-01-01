@@ -23,8 +23,12 @@ keyword: "iOS, APP"
 url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
+# avatar and Favicon
+avatar: /img/OOOHx.png 
+favicon: /img/favicon.ico
+
 # Publish posts or collection documents with a future date.
-future: true
+# future: true
 
 # SNS settings
 RSS: false
