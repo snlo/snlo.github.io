@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: SNLO 
-SEOTitle: snlo的博客 | snlo 
+SEOTitle: snlo的博客 | SNLO
 header-img: img/home-bg.png
 email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -23,54 +23,44 @@ keyword: "iOS, APP"
 url: "https://snlo.app/" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
-# avatar and Favicon
-# avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
-favicon: /img/favicon.ico
-
-
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "APP Developer <br/> 未知的我们向着未知的世界出发"
-sidebar-avatar: /img/avatar.png      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
-# Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+# Publish posts or collection documents with a future date.
+future: true
 
 # SNS settings
-weibo_username:  snloveydus
-zhihu_username:  SNLO
-github_username: snlo
+RSS: false
+weibo_username:      snloveydus
+zhihu_username:      SNLO
+github_username:     snlo
+twitter_username:    snlo
+# facebook_username:   snlo
+# linkedin_username:   firstname-lastname-idxxxx
+
 
 # Build settings
-markdown: kramdown
-theme: minima
+highlighter: rouge
+permalink: pretty
+paginate: 10
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 plugins:
-  - jekyll-feed
-  - jekyll-archives
-
-# Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: db0469bd2240fc017d78                            #生成的clientID
-  clientSecret: 62b65779044955f7d44eacd13a748e4fc3fd2e70    #生成的clientSecret
-  repo: snlo.github.io    #仓库名称
-  owner: snlo    #github用户名
-  admin: snlo
-  # distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
-
-# Friends
-friends: [{
-  title: "snlo's github",
-  href: "https://github.com/snlo"
-}]
+  - jekyll-paginate
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 #   - Gemfile
 #   - Gemfile.lock
 #   - node_modules
@@ -78,3 +68,42 @@ friends: [{
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+
+
+# Disqus settings
+disqus_username: snlo
+
+# Netease settings
+netease_comment: false
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: snlo.app
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "APP Developer <br/> 未知的我们向着未知的世界出发"
+sidebar-avatar: /img/avatar.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#FFC125"
+service-worker: true
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+# Friends
+friends: [{
+  title: "snlo",
+  href: "https://github.com/snlo"
+}]
