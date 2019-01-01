@@ -60,7 +60,8 @@ kramdown:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+exclude: 
+  - README.md
 #   - Gemfile
 #   - Gemfile.lock
 #   - node_modules
