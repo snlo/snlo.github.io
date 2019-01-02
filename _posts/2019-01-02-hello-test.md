@@ -17,62 +17,35 @@ tags:
 
 拉卡萨诺的开发商
 
-asndnfasn dfinasidfnipasndfijnasidjn fijansidjnfjansdijfnjasndfnjiasn djnfiajsndjfne wjnifnqwe uqewirquweoruq woeuroq wueofji wejfiqwj efijqweiofobjectivec
+一段加载bundle中的国际化文字函数
 
 ```swift
 + (NSString *)sn_localizedStringForKey:(NSString *)key table:(NSString *)table bundle:(NSString *)bundle {
-
     if (!table) {
-
         table = @"SNToolStrings";
-
     }
-
     if (!bundle) {
-
         bundle = @"SNTool";
-
     }
-
-    
 
     NSString *language = [NSLocale preferredLanguages].firstObject;
-
     if ([language hasPrefix:@"en"]) {
-
         language = @"en";
-
     } else if ([language hasPrefix:@"zh"]) {
-
         if ([language rangeOfString:@"Hans"].location != NSNotFound) {
-
             language = @"zh-Hans";
-
         }
-
     } else {
-
         language = @"en";
-
     }
 
-    
-
     NSBundle * bundleKit = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:bundle ofType:@"bundle"]];
-
     NSBundle * bundles = [NSBundle bundleWithPath:[bundleKit pathForResource:language ofType:@"lproj"]];
-
-    
 
     NSString * value = [bundles localizedStringForKey:key value:nil table:table];
 
-    
-
     return [[NSBundle mainBundle] localizedStringForKey:key value:value table:table];
-
 }
-
-
 ```
 
 ##### 后记
