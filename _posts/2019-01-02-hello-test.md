@@ -19,61 +19,61 @@ tags:
 
 asndnfasn dfinasidfnipasndfijnasidjn fijansidjnfjansdijfnjasndfnjiasn djnfiajsndjfne wjnifnqwe uqewirquweoruq woeuroq wueofji wejfiqwj efijqweiofobjectivec
 
-{% highlight objective-c %}
+```swift
++ (NSString *)sn_localizedStringForKey:(NSString *)key table:(NSString *)table bundle:(NSString *)bundle {
 
-\+ (NSString *)sn_localizedStringForKey:(NSString *)key table:(NSString *)table bundle:(NSString *)bundle {
+    if (!table) {
 
-​    if (!table) {
+        table = @"SNToolStrings";
 
-​        table = @"SNToolStrings";
+    }
 
-​    }
+    if (!bundle) {
 
-​    if (!bundle) {
+        bundle = @"SNTool";
 
-​        bundle = @"SNTool";
+    }
 
-​    }
+    
 
-​    
+    NSString *language = [NSLocale preferredLanguages].firstObject;
 
-​    NSString *language = [NSLocale preferredLanguages].firstObject;
+    if ([language hasPrefix:@"en"]) {
 
-​    if ([language hasPrefix:@"en"]) {
+        language = @"en";
 
-​        language = @"en";
+    } else if ([language hasPrefix:@"zh"]) {
 
-​    } else if ([language hasPrefix:@"zh"]) {
+        if ([language rangeOfString:@"Hans"].location != NSNotFound) {
 
-​        if ([language rangeOfString:@"Hans"].location != NSNotFound) {
+            language = @"zh-Hans";
 
-​            language = @"zh-Hans";
+        }
 
-​        }
+    } else {
 
-​    } else {
+        language = @"en";
 
-​        language = @"en";
+    }
 
-​    }
+    
 
-​    
+    NSBundle * bundleKit = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:bundle ofType:@"bundle"]];
 
-​    NSBundle * bundleKit = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:bundle ofType:@"bundle"]];
+    NSBundle * bundles = [NSBundle bundleWithPath:[bundleKit pathForResource:language ofType:@"lproj"]];
 
-​    NSBundle * bundles = [NSBundle bundleWithPath:[bundleKit pathForResource:language ofType:@"lproj"]];
+    
 
-​    
+    NSString * value = [bundles localizedStringForKey:key value:nil table:table];
 
-​    NSString * value = [bundles localizedStringForKey:key value:nil table:table];
+    
 
-​    
-
-​    return [[NSBundle mainBundle] localizedStringForKey:key value:value table:table];
+    return [[NSBundle mainBundle] localizedStringForKey:key value:value table:table];
 
 }
 
-{% endhighlight %}
+
+```
 
 ##### 后记
 
