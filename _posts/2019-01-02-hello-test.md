@@ -19,50 +19,61 @@ tags:
 
 asndnfasn dfinasidfnipasndfijnasidjn fijansidjnfjansdijfnjasndfnjiasn djnfiajsndjfne wjnifnqwe uqewirquweoruq woeuroq wueofji wejfiqwj efijqweiofobjectivec
 
-```objective-c
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0: {
-            DecorationCompanyMonthCell * cell = [DecorationCompanyMonthCell sn_nibCellWithTabelView:tableView indexPath:indexPath];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.labelOrderNum.text = self.viewmodelAccountSystem.modelPersonalCore.monthOrder?:@"0";
-            cell.labelAmount.text = SNString(@"￥%@",self.viewmodelAccountSystem.modelPersonalCore.monthIncome?:@"0.00");
-            return cell;
-        } break;
-        case 1: { //余额
-            DecorationCompanyBalanceCell * cell = [DecorationCompanyBalanceCell sn_nibCellWithTabelView:tableView indexPath:indexPath];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.labelBlance.text = self.viewmodelAccountSystem.modelPersonalCore.money?:@"0.00";
-            [[[cell.buttonSelected rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-#pragma mark -- 余额
-                UIViewController * VC = [[SNMediator sharedManager] SNMediator_viewControllerForBalanceBase:@{@"availableamount":self.viewmodelAccountSystem.modelPersonalCore.money}];
-                [self.navigationController pushViewController:VC animated:YES];
-            }];
-            return cell;
-        } break;
-        case 2: { //功能菜单
-            DecorationCompanyWaresControlCell * cell = [DecorationCompanyWaresControlCell sn_nibCellWithTabelView:tableView indexPath:indexPath];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            @weakify(self);
-            [[cell.subjectButton takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id  _Nullable x) {
-                NSDictionary * dic = x;
-                UIButton * button = dic.allValues.firstObject;
-                NSIndexPath * indexPath = dic.allKeys.firstObject;
-                @strongify(self);
-                [self handleBusinessMallControlMenuEvent:button indexPath:indexPath];
-            }];
-            self.cellWares = cell;
-            return cell;
-        } break;
-        default: {
-            return [UITableViewCell new];
-        } break;
-    }
+{% highlight objective-c %}
+
+\+ (NSString *)sn_localizedStringForKey:(NSString *)key table:(NSString *)table bundle:(NSString *)bundle {
+
+​    if (!table) {
+
+​        table = @"SNToolStrings";
+
+​    }
+
+​    if (!bundle) {
+
+​        bundle = @"SNTool";
+
+​    }
+
+​    
+
+​    NSString *language = [NSLocale preferredLanguages].firstObject;
+
+​    if ([language hasPrefix:@"en"]) {
+
+​        language = @"en";
+
+​    } else if ([language hasPrefix:@"zh"]) {
+
+​        if ([language rangeOfString:@"Hans"].location != NSNotFound) {
+
+​            language = @"zh-Hans";
+
+​        }
+
+​    } else {
+
+​        language = @"en";
+
+​    }
+
+​    
+
+​    NSBundle * bundleKit = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:bundle ofType:@"bundle"]];
+
+​    NSBundle * bundles = [NSBundle bundleWithPath:[bundleKit pathForResource:language ofType:@"lproj"]];
+
+​    
+
+​    NSString * value = [bundles localizedStringForKey:key value:nil table:table];
+
+​    
+
+​    return [[NSBundle mainBundle] localizedStringForKey:key value:value table:table];
+
 }
 
-```
-
-
+{% endhighlight %}
 
 ##### 后记
 
