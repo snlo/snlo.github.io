@@ -19,7 +19,7 @@ tags:
 
 asndnfasn dfinasidfnipasndfijnasidjn fijansidjnfjansdijfnjasndfnjiasn djnfiajsndjfne wjnifnqwe uqewirquweoruq woeuroq wueofji wejfiqwj efijqweiofobjectivec
 
-```objectivec
+```objective-c
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0: {
