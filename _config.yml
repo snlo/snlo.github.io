@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: SNLO 
 SEOTitle: snlo的博客 | SNLO
-header-img: img/post-bg-apple-event-2015.jpg
+header-img: img/header_world.jpg
 email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   APP描述
@@ -24,7 +24,7 @@ url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http:
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # avatar and Favicon
-avatar: /img/OOOHx.png 
+avatar: /img/icon.png 
 favicon: /img/favicon.ico
 
 # Publish posts or collection documents with a future date.
@@ -93,8 +93,8 @@ ga_domain: snlo.app
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "APP Developer <br/> 未知的我们向着未知的世界出发"
-sidebar-avatar: /img/OOOHx.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "APP Developer <br/> 究竟拿时间做了什么？"
+sidebar-avatar: /img/icon.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags

@@ -4,7 +4,7 @@ title:                  "Hello test"
 subtitle:            " \"Hello TEST,\""
 date:                 2019-01-02 11:08:00 +0800
 author:             "SNLO"
-header-img:     "img/post-bg-apple-event-2015.jpg"
+header-img:     "img/header_code.jpg"
 catalog:            true
 tags:
 - 生活
