@@ -78,7 +78,7 @@ exclude:
 
 
 # Disqus settings
-disqus_username: snlo
+# disqus_username: snlo
 
 # Netease settings
 netease_comment: false
@@ -106,6 +106,17 @@ service-worker: true
 
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
+
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: db0469bd2240fc017d78                            #生成的clientID
+  clientSecret: 62b65779044955f7d44eacd13a748e4fc3fd2e70    #生成的clientSecret
+  repo: snlo.github.io    #仓库名称
+  owner: snlo    #github用户名
+  admin: snlo
+  # distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
 
 # Friends
 friends: [{
