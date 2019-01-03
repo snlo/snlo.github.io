@@ -79,16 +79,15 @@ exclude:
 
 # Disqus settings
 disqus_username: snlo
-
 # Netease settings
-netease_comment: false
+netease_comment: true
 
 # Analytics settings
 # Baidu Analytics 
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-131671395-1'            # Format: UA-xxxxxx-xx
 ga_domain: snlo.app
 
 # Sidebar settings
