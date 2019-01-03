@@ -47,6 +47,7 @@ paginate: 10
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
 # Markdown settings
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
@@ -112,7 +113,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: db0469bd2240fc017d78                            #生成的clientID
   clientSecret: 62b65779044955f7d44eacd13a748e4fc3fd2e70    #生成的clientSecret
-  repo: snlo.github.io    #仓库名称
+  repo: snlo-issues    #仓库名称
   owner: snlo    #github用户名
   admin: snlo
   # distractionFreeMode: true #是否启用类似FB的阴影遮罩
