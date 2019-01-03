@@ -79,8 +79,9 @@ exclude:
 
 # Disqus settings
 disqus_username: snlo
+
 # Netease settings
-netease_comment: true
+netease_comment: false
 
 # Analytics settings
 # Baidu Analytics 
