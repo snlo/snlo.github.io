@@ -127,4 +127,8 @@ friends: [{
 },{
   title: "Apple",
   href: "https://developer.apple.com/documentation/"
+},{
+  title: "W3C" ,
+  href: "https://www.w3.org/"
+
 }]
