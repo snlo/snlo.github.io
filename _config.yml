@@ -121,4 +121,10 @@ gitalk:
 friends: [{
   title: "snlo",
   href: "https://github.com/snlo"
+},{
+  title: "leetcode",
+  href: "https://leetcode.com"
+},{
+  title: "Apple",
+  href: "https://developer.apple.com/documentation/"
 }]
