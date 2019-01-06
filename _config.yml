@@ -121,7 +121,7 @@ gitalk:
 
 # Friends
 friends: [{
-  title: "Leetcode",
+  title: "Leet Code",
   href: "https://leetcode.com"
 },{
   title: "Apple",
