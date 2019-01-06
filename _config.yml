@@ -20,7 +20,7 @@ email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   APP描述
 keyword: "iOS, APP"
-url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://snlo.app" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # avatar and Favicon
