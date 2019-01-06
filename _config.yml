@@ -19,7 +19,7 @@ header-img: img/header_world.jpg
 email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   APP描述
-keyword: "SNLO APP,snlo的博客,snlo的blog,snlo`blog,孙东,孙东的博客"
+keyword: "SNLO APP,snlo的博客,snlo的blog,snlo`blog,孙东,孙东的博客,snlo开源"
 url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
