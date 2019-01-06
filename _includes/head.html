@@ -14,6 +14,14 @@
 	document.onselectstart=new Function("event.returnValue=false");
 </script>
 
+<script type="text/javascript">
+	var url = window.location.href;
+	if (url.indexOf("https") < 0) {
+		url = url.replace("http:", "https:");
+		window.location.replace(url);
+	}
+</script>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
