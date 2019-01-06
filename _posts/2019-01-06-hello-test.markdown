@@ -13,3 +13,15 @@ tags:
 <a href= "https://www.baidu.com/" target="_blank">百度</a>
 
 人笨还坚守原则
+
+```swift
+- (void)viewDidLoad {
+
+	[super viewDidLoad];
+
+	// Do any additional setup after loading the view, typically from a nib.
+
+}
+
+```
+
