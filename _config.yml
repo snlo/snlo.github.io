@@ -14,12 +14,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: SNLO 
-SEOTitle: snlo的博客 | SNLO
+SEOTitle: SNLO | APP
 header-img: img/header_world.jpg
 email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   APP描述
-keyword: "iOS, APP"
+keyword: "SNLO APP,snlo的博客,snlo的blog,snlo`blog,孙东,孙东的博客"
 url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
