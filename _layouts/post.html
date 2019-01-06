@@ -51,8 +51,7 @@ layout: default
                     {% endif %}
                 </ul>
                 <hr style="visibility: hidden;">
-                
-                
+				
                 <!--Gitalk评论start  -->
                 {% if site.gitalk.enable %}
                 <!-- 引入Gitalk评论插件  -->
@@ -76,8 +75,7 @@ layout: default
                     </script>
                 {% endif %}
                 <!-- Gitalk end -->
-                
-                
+				
                 {% if site.disqus_username %}
                 <!-- disqus 评论框 start -->
                 <div class="comment">
@@ -103,7 +101,7 @@ layout: default
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
+                        <a class="catalog-toggle" href="#">目录</a>
                     </h5>
                     <ul class="catalog-body"></ul>
                 </div>
@@ -136,7 +134,7 @@ layout: default
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
   var cloudTieConfig = {
-    url: document.location.href, 
+    url: document.location.href,
     sourceId: "",
     productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",
     target: "cloud-tie-wrapper"
@@ -180,7 +178,7 @@ layout: default
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
-    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js",function(){
         anchors.options = {
           visible: 'always',
           placement: 'right',
