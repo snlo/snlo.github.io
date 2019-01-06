@@ -86,11 +86,5 @@
 	document.onselectstart=new Function("event.returnValue=false");
 	webkit.touch
 </script>
-<div unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;">
-	你选不了我,
-	unselectable: IE/Opera,
-	-moz-user-select: FireFox,
-	onselectstart: IE/Safari,
-	-webkit-user-select:Chrome
-</div>
+body{-webkit-user-select:none}
 
