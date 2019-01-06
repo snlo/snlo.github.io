@@ -36,7 +36,8 @@ weibo_username:      1680308147
 zhihu_username:      sun-hao-35-85
 github_username:     snlo
 twitter_username:    snloveydus
-# facebook_username:   snlo
+jianshu_username:    snlo
+facebook_username:   snlo
 # linkedin_username:   firstname-lastname-idxxxx
 
 
@@ -115,7 +116,7 @@ gitalk:
   repo: snlo-issues    #仓库名称
   owner: snlo    #github用户名
   admin: snlo
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  distractionFreeMode: false #是否启用类似FB的阴影遮罩
 
 # Friends
 friends: [{
