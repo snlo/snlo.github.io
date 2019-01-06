@@ -20,6 +20,10 @@
 		url = url.replace("http:", "https:");
 		window.location.replace(url);
 	}
+	if(url.indexOf(".github.io") >= 0 ) { //判断url地址中是否包含link字符串
+		url = url.replace(".github.io", ".app");
+		window.location.replace(url);
+	}
 </script>
 
 <head>
