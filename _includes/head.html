@@ -16,12 +16,12 @@
 
 <script type="text/javascript">
 	var url = window.location.href;
-	if (url.indexOf("https") < 0 | url.indexOf(".github.io") >= 0 ) {
+	if (url.indexOf("https") < 0 || url.indexOf(".github.io") >= 0 ) {
 		if (url.indexOf("https") < 0 | ) {
 			url = url.replace("http:", "https:");
 			alert("http");
 		}
-		if(url.indexOf(".github.io") >= 0 ) { //判断url地址中是否包含link字符串
+		if(url.indexOf(".github.io") >= 0 ) {
 			url = url.replace(".github.io", ".app");
 			alert(".github.io");
 		}
