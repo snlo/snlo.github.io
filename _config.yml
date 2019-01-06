@@ -121,9 +121,6 @@ gitalk:
 
 # Friends
 friends: [{
-  title: "Snlo`Github",
-  href: "https://github.com/snlo"
-},{
   title: "Leetcode",
   href: "https://leetcode.com"
 },{
