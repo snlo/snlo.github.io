@@ -2,6 +2,7 @@
 layout:              post
 title:               "Hello test"
 subtitle:            " \"Hello World, Hello Blog\""
+description:         "Hello World, Hello Blog"
 date:                2019-01-06 00:00:00 +0800
 author:              "SNLO"
 header-img:          "img/header_code.jpg"
@@ -28,3 +29,4 @@ tags:
 https://revealapp.com
 
 https://xclient.pipipan.com/fs/13114864-328603026
+
