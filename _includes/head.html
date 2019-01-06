@@ -88,15 +88,22 @@
 
 <script>
 	window.onload=function(){
+		document.onselectstart=function(e){
+			alert('禁止选取');
+			e.returnValue=false;
+		}
+		document.onselectstart=function(e){
+			alert('禁止选取');
+			return false;
+		}
 		document.oncopy=function(){
 			alert('禁止复制');
 			e.returnValue=false;
 		}
 		document.oncopy=function(){
 			alert('禁止复制');
-			return false;
+			e.returnValue=false;
 		}
-		
 	}
 </script>
 
