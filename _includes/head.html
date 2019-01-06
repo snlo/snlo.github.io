@@ -84,7 +84,17 @@
 	// onselectstart几乎可以用于所有对象，其触发时间为目标对象被开始选中时（即选中动作刚开始，尚未实质性被选中）
 	
 	document.onselectstart=new Function("event.returnValue=false");
-	webkit.touch
+	webkit.touch.callout=new Function("event.returnValue=false");
 </script>
-body{-webkit-user-select:none}
-
+<!---->
+<!--<script-->
+<!--	* {-->
+<!--	-webkit-touch-callout:none;-->
+<!--	-webkit-user-select:none;-->
+<!--	-khtml-user-select:none;-->
+<!--	-moz-user-select:none;-->
+<!--	-ms-user-select:none;-->
+<!--	user-select:none;-->
+<!--	}-->
+<!--	-->
+<!--</script>-->
