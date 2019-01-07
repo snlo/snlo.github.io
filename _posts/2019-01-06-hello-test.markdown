@@ -15,16 +15,7 @@ tags:
 
 修改了
 
-```swift
-- (void)viewDidLoad {
 
-	[super viewDidLoad];
-
-	// Do any additional setup after loading the view, typically from a nib.
-
-}
-
-```
 
 https://revealapp.com
 
