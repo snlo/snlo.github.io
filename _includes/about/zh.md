@@ -7,6 +7,13 @@ Hey，我是黄玄，病毒种，进化程度不明，多出没于[博客](https
 
 一些作品和开源软件项目，👉 戳 [Portfolio](/portfolio)、[Github](http://github.com/huxpro)、[演说.io](https://zhuanlan.zhihu.com/p/21280918)。 
 
+##### Tools
+
+- <a href= "https://imageoptim.com/" target="_blank">ImageOptim</a>：一款优化网站图片大小的软件，清理掉Image中无关紧要的数据。
+- <a href= "https://kapeli.com/dash" target="_blank">Dash</a>：我把它当跨平台的代码片段插件来使用，同时Dash也是一个优秀API文档浏览器，支持离线管理。
+- <a href= "https://www.typora.io" target="_blank">Typora</a>：优雅的Markdown编辑器。
+- <a href= "https://www.sublimetext.com" target="_blank">Sublime Text</a>：用于代码、标记和散文等的复杂文本编辑器。
+
 
 ##### Talks
 
