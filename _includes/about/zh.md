@@ -13,6 +13,7 @@ Hey，我是黄玄，病毒种，进化程度不明，多出没于[博客](https
 - <a href= "https://kapeli.com/dash" target="_blank">Dash</a>：我把它当跨平台的代码片段插件来使用，同时Dash也是一个优秀API文档浏览器，支持离线管理。
 - <a href= "https://www.typora.io" target="_blank">Typora</a>：优雅的Markdown编辑器。
 - <a href= "https://www.sublimetext.com" target="_blank">Sublime Text</a>：用于代码、标记和散文等的复杂文本编辑器。
+- 
 
 
 ##### Talks
