@@ -15,16 +15,16 @@ tags:
 
 ### 简介
 
-##### 为什么选择Github Pages？
+为什么选择Github Pages？
 
 - 免费，而且空间不限。
 - 习惯了Git版本管理，可以直接在Github网页版上编辑和发布博客。
 
-##### 为什么选择Jekyll？
+为什么选择Jekyll？
 
 - 被Github Pages推荐和默认支持的静态博客框架。
 
-- 只关心`.md`的类容即可。简单不花哨，看它的<a href= "http://jekyllthemes.org/" target="_blank">官方主题</a>就知道。
+- 只关心`.md`的内容即可。简单不花哨，看它的<a href= "http://jekyllthemes.org/" target="_blank">官方主题</a>就知道。
 
 ### 项目环境
 
@@ -69,3 +69,8 @@ theme：<a href= "http://jekyllthemes.org/themes/project-pages/" target="_blank"
 ### Gitalk
 
 安装Gitalk bla bla bla bla... ...
+
+### 参考
+
+<a href= "http://www.bootcss.com" target="_blank">Bootstrap</a> 、<a href= "https://github.com/ahmetcecen" target="_blank">Ahmet Cecen</a>
+
