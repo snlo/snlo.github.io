@@ -50,11 +50,11 @@ theme：<a href= "http://jekyllthemes.org/themes/project-pages/" target="_blank"
 
 创建好后，找到Repository的`settings`选项，在设置中选择一个Jekyll主题（Github Pages推荐和支持的博客是Jekyll，所以可以在这里选择Jekyll主题）。再回到设置界面，此时可以看见你博客访问域名了。
 
-![](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/190101/1.png)
+![](https://snlo/img/blog_img/190101/1.png)
 
-![](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/190101/2.png)
+![](https://snlo/img/blog_img/190101/2.png)
 
-![](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/190101/3.png)
+![](https://snlo/img/blog_img/190101/3.png)
 
 若需要为博客配置自己的域名，则需要再到设置界面修改`Custom domain`选项值。Github Pages会为你的域名自动分配SSL证书，以使得域名可以经`https://`进行访问，值得注意的是Github Pages不提供自定义上传SSL证书的服务，所以有三个选择：
 
@@ -64,7 +64,7 @@ theme：<a href= "http://jekyllthemes.org/themes/project-pages/" target="_blank"
 
 对于无法选中`Enforce HTTPS`选项的问题，强烈建议查看一下域名解析中是否已增加了一条为`letsencrypt.org 0 issue`的CAA记录，若没有则需要添加，关于这个问题只是针对已经颁发了SSL证书的域名。以下是Github技术支持的回复：
 
-![](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/190101/5.png)
+![](https://snlo/img/blog_img/190101/5.png)
 
 ### Gitalk
 
