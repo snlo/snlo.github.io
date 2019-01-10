@@ -11,7 +11,7 @@ tags:
 - server
 ---
 
-> 记录一些踩过的坑，躺过的河
+> 记录一些踩过的坑
 
 ### 简介
 
@@ -39,7 +39,7 @@ tags:
 
 怎么创建？其实很简单，就像新建Repositories一样，不同之处在于`Repository name`须命名为`user_name.github.io`的格式。其中`user_name`是指你Github的账户名，当然也可以不用这种命名格式。
 
-- 若不是这是种命名格式，创建的Github Pages的访问地址是'https://user_name.github.io/custom_repository_name/'。
+- 若不是这是种命名格式，创建的Github Pages的访问地址'https://user_name.github.io/custom_repository_name/'。
 - 若是这是种命名格式，创建的Github Pages的访问地址是'https://user_name.github.io'。
 
 创建好后，找到Repository的`settings`选项，在设置中选择一个Jekyll主题（Github Pages推荐和支持的博客是Jekyll，所以可以在这里选择Jekyll主题）。再回到设置界面，此时可以看见你博客访问域名了。
@@ -54,7 +54,7 @@ tags:
 
 - 要么严格按照<a href= "https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank">Github Help - Enforce HTTPS</a>的指南进行域名的解析。
 - 要么找类似<a href= "https://dash.cloudflare.com/" target="_blank">Cloudflare</a>域名托管服务提供商进行网站的反向代理。
-- 要么就这样，以`http://`方式访问。
+- 要么就这样子，以`http://`方式访问。
 
 对于无法选中`Enforce HTTPS`选项的问题，强烈建议查看一下域名解析中是否已增加了一条为`letsencrypt.org 0 issue`的CAA记录，若没有则需要添加，关于这个问题只是针对已经颁发了SSL证书的域名。以下是Github技术支持的回复：
 
@@ -81,10 +81,10 @@ $ gem sources -a new_url	#添加
 $ gem sources -u			#更新源缓存
 
 $ sudo gem install bundler		#安装'bundler'，一个很好的管理ruby项目gems的工具
-Password:
-Fetching: bundler-2.0.1.gem (100%)
-ERROR:  While executing gem ... (Gem::FilePermissionError)
-    You don't have write permissions for the /usr/bin directory.
+#Password:
+#Fetching: bundler-2.0.1.gem (100%)
+#ERROR:  While executing gem ... (Gem::FilePermissionError)
+#    You don't have write permissions for the /usr/bin directory.
 #哦不，它报错了，没有写入权限，即使使用的是sudo,上面已经阐述了原因和解决方法
 $ sudo gem install -n/usr/local/bin bundler 	#重新安装'bundler'
 
@@ -92,8 +92,8 @@ $ sudo gem instll -n/usr/local/bin jekyll 	#安装Jekyll
 $ jekyll new user_blog		#新建名为'user_blog'的Jekyll博客项目
 $ cd /users/mac_name/user_blog 	#cd到你刚刚新建的'user_blog'项目
 $ bundle bundle exec jekyll serve	#本地启动Jekyll博客项目，也可以使用'jekyll serve'命令
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
+#    Server address: http://127.0.0.1:4000/
+#  Server running... press ctrl-c to stop.
 #浏览器打开'http://127.0.0.1:4000/'便可实时预览博客效果
 ```
 
@@ -106,7 +106,7 @@ group :jekyll_plugins do
 end
 ```
 
-然后在终端中输入一下命令更新：
+然后在终端中输入以下命令更新：
 
 ```shell
 $ bundle install
@@ -147,7 +147,7 @@ gitalk:
 
 ```
 
-此时只剩最后一步，就可以在每篇博客中自动生成Issues了。在你的博客目录`_layouts/post.html`中加入一下代码：
+此时只剩最后一步，就可以在每篇博客中自动生成Issues了。在你的博客目录`_layouts/post.html`中加入以下代码：
 
 ```html
 <!--Gitalk评论start  -->
