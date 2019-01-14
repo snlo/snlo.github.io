@@ -22,3 +22,7 @@ Hey，我是snlo。一位有轻度代码洁癖的APP工程师，设计过商城�
 - <a href= "https://desktop.github.com/" target="_blank">Github Desktop</a>：完全开源且可随时定制的统一跨平台GitHub工作流程客户端，也可用作Git版本管理。
 - <a href= "https://www.eudic.net/v4/en/app/eudic" target="_blank">欧路词典</a>：学习英语的时候不可或缺的词典工具。
 
+##### Blog Tags
+
+- <a href= "http://cdixon.org/" target="_blank">cdixon</a>：a16z.com - 合伙人
+
