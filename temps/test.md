@@ -1,0 +1,10 @@
+1、为什么在OC中不能函数重载，就是函数名相同，参数不同？
+
+因为在runtime的objc_method结构体中的SEL method_name的命名规则类似className+method，即同一类中SEL不能重复，不同类中SEL可以重复，它的命名并没有包含参数名。
+
+2、为什么利用runtime可以给分类添加实例变量？
+
+在objc_category的表示指向分类的结构体的指针的定义中，有个属性为struct property_list_t *instanceProperties; instanceProperties：表示Category里所有的properties，这就是我们可以通过objc_setAssociatedObject和objc_getAssociatedObject增加实例变量的原因，不过这个和一般的实例变量是不一样的。
+
+3、KVO是如何实现的？
+
