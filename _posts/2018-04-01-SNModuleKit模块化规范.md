@@ -1,14 +1,13 @@
 ---
 layout:              post
 title:               "SNModuleKit模块化规范"
-subtitle:            " "SNModuleKit模块化规范，模块化是如何实施的，以及模块化开发规范""
+subtitle:            " \"SNModuleKit模块化规范，模块化是如何实施的，以及模块化开发规范\""
 description:         "SNModuleKit模块化规范"
 date:                2018-04-01 00:00:00 +0800
 author:              "SNLO"
 header-img:          "img/header_code.jpg"
 catalog:             true
 tags:
-
 - 文档
 ---
 
