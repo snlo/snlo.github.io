@@ -1,6 +1,7 @@
+---
 layout:              post
 title:               "SNModuleKit模块化规范"
-subtitle:            " \"SNModuleKit模块化规范，模块化是如何实施的，以及模块化开发规范\""
+subtitle:            " "SNModuleKit模块化规范，模块化是如何实施的，以及模块化开发规范""
 description:         "SNModuleKit模块化规范"
 date:                2018-04-01 00:00:00 +0800
 author:              "SNLO"
@@ -9,12 +10,11 @@ catalog:             true
 tags:
 
 - 文档
+---
 
 # SNModuleKit模块化规范
 
 > 本文是针对`SNModuleKit`框架下的模块化架构做出的规范
-
-
 
 ## 关键术语说明
 
@@ -215,11 +215,10 @@ SNModuleKit在Github上开源，<a href= "https://github.com/snlo/SNModuleKit" t
 
 10. 对API的命名要求：
 
-    - 如果是系统分类或者第三方库分类的属性和接口的命名必须添加类似`sn_`（developer name）的前缀。
+   - 如果是系统分类或者第三方库分类的属性和接口的命名必须添加类似`sn_`（developer name）的前缀。
 
-    - 其它的应该尽量言简意赅，（可以参考apple的格式）。
+   - 其它的应该尽量言简意赅，（可以参考apple的格式）。
 
-11. 
 
 ## 关于模块化集成
 
