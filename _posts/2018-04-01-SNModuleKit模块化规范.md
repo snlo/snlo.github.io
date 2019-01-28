@@ -1,7 +1,7 @@
 layout:              post
-title:               "模块化开发文档"
-subtitle:            " \"模块化开发文档\""
-description:         "模块化开发文档"
+title:               "SNModuleKit模块化规范"
+subtitle:            " \"SNModuleKit模块化规范，模块化是如何实施的，以及模块化开发规范\""
+description:         "SNModuleKit模块化规范"
 date:                2018-04-01 00:00:00 +0800
 author:              "SNLO"
 header-img:          "img/header_code.jpg"
@@ -82,7 +82,7 @@ tags:
 
 ## 在`SNModuleKit`框架下，模块化是怎么实施的
 
-先来看看`SNModuleKit`本身的架构图：![1](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/180401/1.jpg)
+先来看看`SNModuleKit`本身的架构图：![1](https://snlo.app/img/blog_img/180401/1.jpg)
 
 SNModuleKit在Github上开源，<a href= "https://github.com/snlo/SNModuleKit" target="_blank">这里</a>有详细的介绍和使用说明。
 
@@ -94,7 +94,7 @@ SNModuleKit在Github上开源，<a href= "https://github.com/snlo/SNModuleKit" t
 2. 团队规模，各个团队成员各自的强项。
 3. 各个端口的情况，比如产品经理、后端和前端等。
 4. 项目未来整体大致的规划。
-5. 模块的各个组成部分应尽量准守`开-闭`原则（设计模式几大原则之首）。
+5. 模块的各个组成部分应尽量遵守`开-闭`原则（设计模式几大原则之首）。
 
 为什么要考虑这些个因数呢？那如果说项目在初期阶段，各模块被划分得比较大的话，在项目研发进行到一定程度，或者说需求累积到一定量时，整个模块内的业务量会大到让人头痛，以至于模块化都不复存在了，并且当对这种“超级”模块进行模块拆分时，会让你感觉浑身不舒服。
 
@@ -107,135 +107,38 @@ SNModuleKit在Github上开源，<a href= "https://github.com/snlo/SNModuleKit" t
 
 在阶段1和2的时候，尽量参与进入，参与不了的后期也要多分析他们梳理出来的文档。这样做的好处是你会预判整个项目未来具体长啥样子。既是心中有数也是具有全局观，模块划分才会有方向感，不至于把两个完全不相关的功能或者组件放到一个模块里，违背了“高内聚、低耦合”的设计原则。在阶段3的时候，如果之前就做好了模块化，那么这个阶段模块很有可能会增多会变小。当两人同时开发一个模块的时候，是时候考虑进行模块拆分了，拆分后各自负责各自负责的模块，互不干扰。如果在此之前没有进行模块化，也就是说是在项目研发到一半时才开始模块化，不要慌张，其实也很简单，只是一些模块拆分和重组类似的工作，不就是项目架构重构嘛，请自己相信自己，为了项目将来的发展。在阶段4的时候，项目需求已经趋于完善了相对稳定，这时有必要考虑从新审查每个模块，让它们接近完美。为以后的维护做准备，为项目突然新增需求做准备，比如说不就是新增加一个扫描二维码的功能嘛，好的完成了，在产品部刚出需求变更通知时。再比如某个模块出问题了，没关系立马用备用模块临时替换掉。审查每个模块朝着这种“比如”去做就对了。
 
-为什么要考虑模团队成员各自的强项呢？很简单，举个例子说明，团队中分别有小明和小花两名成员，小明擅长视频处理，小花擅长图形图像处理，，，
+为什么要考虑模团队成员各自的强项呢？很简单，举个例子说明，团队中分别有小明和小花两名成员，小明擅长视频处理，小花擅长图形图像处理，如果在划分模块时把图形图像处理和视频处理划分到了一个模块文件处理模块里面，那么小明和小花将会在同一个模块下进行开发。在版本管理中他们将会不断的进行代码合并、代码冲突处理和进度进程阻塞等待等。虽然这种情况不可避免，有可能还是常有的事情，也没什么不可行的地方，但是既然我们的模块化可以避免这种情况发生，那为什么不去避免呢？试想，视频处理和图形图像处理被分别划分到不同的模块里，那他们分别负责不同的模块进行开发，相互不干扰效率不是更高吗。
 
-为什么要考虑项目未来整体大致的规划呢？其实说白就是到底要不要模块化？要知道不是所有的项目都适合去做模块化，到底适不适合？各有各的说法仁者见仁，非要强行在只有一个单一功能的小项目中实施模块化谁又能说什么呢。再比如，团队中这个端口就只有一个人，并且根据项目规划，未来不打算增加团队成员，这种情概况进行模块化，我觉得那个人实属不易。要知道模块化还是会增加不少的工作量的。
+为什么要考虑项目未来整体大致的规划呢？其实说白了就是到底要不要模块化？要知道不是所有的项目都适合去做模块化，到底适不适合？各有各的说法仁者见仁，非要强行在只有一个单一功能的小项目中实施模块化谁又能说什么呢。再比如，团队中这个端口就只有一个人，并且根据项目规划，未来不打算增加团队成员，这种情概况进行模块化，我觉得那个人实属不易。要知道模块化还是会增加不少的工作量的。
+
+## 模块内目录结构
+
+由`SNModuleKit`中提供的模板创建的公共模块来举例说明：
+
+- Protocol：存放模块内部协议。
+- Actions：存放`Action`类，为中间件提供模块对外开放的功能接口。
+- Resources：存放`.xcassets、.md`等资源文件。
+- Utils：存放工具类。
+- Macro：存放宏定义文件，不同类型的宏建议在不同文件中实现。
+- Categories：存放该模块所有的分类，模块化应遵守`多用组合少用继承`的设计原则，而分类就是对装饰模式的具体实现，装饰模式可以有效的避免大量的继承。
+- MVVM：本模块内是采用MVVM的架构进行组织代码的，也可以采用MVC、MVP等主流架构，不影响模块化。
+- Vender：存放未经依赖工具管理但只在本模块中采用的第三方库（组件）。
 
 ## 模块化编码规范
 
-## 目录
+1. 在模块中可以使用MVC、MVVM、MVP等常用开发框架，因为每个模块之间都是相互独立的，耦合度几乎为零，它们仅因中间调度者的存在而相互有着弱联系。
 
-- [模块目录结构](#模块目录结构)
-- [模块开发相关规范](#模块开发相关规范)
-- [关于中间调度](#关于中间调度)
-- [第三方库](#第三方库)
-- [模块内业务代码组织结构](#模块内业务代码组织结构)
-- [团队编码指南](#团队编码指南)
-- [关于](#关于)
+2. 严格按照模块目录结构进行文件管理，如不能在工具类文件夹中存放宏定义文件等。
 
-## 模块目录结构
+3. 对于UIViewController的创建方式非特殊需求禁止采用懒加载的方式创建。以此来防止不必要的循环引用。
 
+4. 对提供给中间件的接口，严格按照`SNMediatorKit`官方文档进行编写。
 
+5. 命名应遵守Apple命名约定，特别是与[内存管理规则](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html)（[NARC](http://stackoverflow.com/a/2865194/340508)）有关的命名约定。命名长的，描述性的方法和变量名很好。
 
-## 模块开发相关规范
+6. 对变量属性的命名和声明应该是（采用反命名规则，如：应该是`buttonSetting`而不是`settingButton`，再如：应该是`viewPerson`而不是`personView`）：
 
-1. 在模块中可以使用MVC、MVVM、MVP等常用开发框架，因为每个模块之间都是相互独立的，耦合度几乎为零，它们仅因中间调度者‘mediator’的存在而相互有着联系。
-
-2. 在模块中，类名以及文件名的命名规范如一下格式：
-
-   ```objective-c
-   //类名文件名 = 模块名+创建者标识（若该模块只是独立开发可忽略）+业务定义+所属属性
-   /**
-   ps: OrderBaseViewController = Order(模块名) + Base(定义) + ViewController(属性为视图控制器)；
-   */
    ```
-
-3. 命名当以美式英语加驼峰的形式进行，如需另行说明可在相应头文件中注释。不得出现‘[图一]’中的情况。
-
-4. 所有业务代码必须对号入座，如不能在工具类文件夹中存放宏定义文件等。
-
-5. 对于UIViewController的创建方式非特殊需求禁止采用懒加载的方式创建。以此来防止不必要的循环引用。
-
-## 关于中间调度
-
-由`SNMediatorKit`中间件所决定的，模块间`Target-Action`的规范
-
-1. 调度是以target-action的方式进行的，在SNMediator分类中进行并带有参数params 如‘SNMediator+OrderActions’中，在Target_中实现。
-
-2. SNMediator的调度顺序：远程调度 —> 本地调度。所以在各模块中只有本地调度。若有远程调度的需求，也没关系，因为始终都会到达本地调度这一步。
-
-3. 在对中间调度进行开发时，需注意几处硬编码。这也是为了避免调度开始前的中间件注册问题。硬编码说明如下：
-
-   ```objective-c
-   # import "Target_Order.h" // 'Target_ + target名一般情况以模块名命名’ 中 ‘Target_’为硬编码
-   
-   # import "OrderBaseViewController.h"
-   
-   @implementation Target_kOrder
-   /**
-    方法名中‘Action_’为硬编码，‘Action_native...’中除了‘Action_’硬编码外‘native’也算是，因为‘native’是为了区分远程调度而存在的硬编码。
-    */
-   
-   - (UIViewController *)Action_nativeFetchOrderBaseViewController:(NSDictionary *)parames {
-   
-     OrderBaseViewController * VC = [[OrderBaseViewController alloc] init];
-     return VC;
-     }
-   @end
-   ```
-
-   ```objective-c
-   # import "SNMediator+OrderActions.h"
-   
-   //Actions中 类‘Target_’之后的硬编码
-   NSString * const kSNMediatorTargetOrderAction = @"kOrder";
-   
-   //Actions中 方法'Action_'之后的硬编码
-   NSString * const kSNMediatorActionNativeFetchOrderBasrViewController = @"nativeFetchOrderBaseViewController";
-   
-   @implementation SNMediator (OrderActions)
-   
-   - (UIViewController *)SNMediator_viewControllerForOrderBase:(NSDictionary *)params {
-   
-     UIViewController * viewController = [[SNMediator sharedManager] performTarget:kSNMediatorTargetOrderAction action:kSNMediatorActionNativeFetchOrderBasrViewController params:params shouldCacheTarget:NO];
-   
-     if ([viewController isKindOfClass:[UIViewController class]]) {
-       return viewController;
-     } else {
-       UIViewController * nullViewController = [UIViewController new];
-       [nullViewController.view sn_viewEmpty];
-       return nullViewController;
-     }
-     }
-   
-   @end
-   ```
-
-   ​
-
-## 第三方库
-
-1. 模块内采用手动管理的方式集中在‘vender’中管理。不能使用cocoapods管理，当第三方库出现在了模块中，则说明该第三方库对其他模块意义不大，相反则表明该组件化架构有待优化。
-2. 尽量避免在第三方库中修改其源码，有必要时可与源码作者沟通。
-3. 在本地导入第三方库前，请参考公共组件模块，避免重复导入造成不必要的麻烦，或者与小组成员谈论该第三方库的可用性。
-
-## 模块内业务代码组织结构
-
-1. 模块内关于业务相关的开发框架没有限制，但是尽量与其它的模块风格保持一致。代码
-
-   1. 目录结构应该是 业务—>框架 的强业务型 如下图：   
-
-      ![屏幕快照 2017-10-27 下午1.50.51](/Users/snlo/Desktop/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-27%20%E4%B8%8B%E5%8D%881.50.51.png)		
-
-    而不是 框架—>业务，如下图：
-
-    ![屏幕快照 2017-10-27 下午4.07.51](/Users/snlo/Desktop/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-27%20%E4%B8%8B%E5%8D%884.07.51.png)	
-
-
-
-1. 建议采用XIB而不是storyboard。
-
-2. 创建Controller时采用自定义的snlo touch class，里面有代码管理规范的Mark
-
-   ​
-
-## 编码规范
-
-1. 命名应尽可能遵守Apple命名约定，特别是与[内存管理规则](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html)（[NARC](http://stackoverflow.com/a/2865194/340508)）有关的命名约定。命名长的，描述性的方法和变量名很好。
-
-2. 对变量属性的命名和声明应该是(采用反命名规则，如应该是buttonSetting而不是settingButton，再如果应该是viewPerson而不是personView)：
-
-   ```objective-c
    @property (nonatomic, strong) UIButton * buttonSetting;
    
    self.buttonSetting;
@@ -250,19 +153,21 @@ SNModuleKit在Github上开源，<a href= "https://github.com/snlo/SNModuleKit" t
 
    而不应该是：
 
-   ```objective-c
+   ```objc
    @interface StandardViewController () <UITableViewDelegate> {
        UIButton * _setBut;
+       UIButton * _settingButton;
    }
    
    _setBut;
+   _settingButton;
    ```
 
-3. 注释：当需要它们时，应该使用注释来解释**为什么**特定的代码片段做某事。注释必须保持最新。通常应避免阻止注释，因为代码应尽可能自我记录，只需要间歇的，几行的解释。所有暴露在头文件里面的必须注释。
+7. 应该使用注释来解释为什么这段特殊的代码片段在这儿或者做了某事。注释必须保持最新。所有暴露在头文件里面的必须注释。
 
-4. 间距：应该是：
+8. 代码整洁应该是：
 
-   ```objective-c
+   ```objc
    if（user.isHappy）{
       //做某事 
    } else {
@@ -279,7 +184,7 @@ SNModuleKit在Github上开源，<a href= "https://github.com/snlo/SNModuleKit" t
 
    而不应该是：
 
-   ```objective-c
+   ```objc
    if（user.isHappy）{
       //做某事 
    } 
@@ -297,19 +202,91 @@ SNModuleKit在Github上开源，<a href= "https://github.com/snlo/SNModuleKit" t
        }];
    ```
 
-5. 命名优先级（相对本模块）：
+9. 在模块中，类名以及文件名的命名规范需遵守以下格式：
 
-   ```objective-c
-   object name = module name + developer name + object definition + object attribute;
+   ```objc
+   // object name = module name + developer name + object definition + object attribute;
+   /**
+   ps: OrderBaseViewController = Order(module name) + Base(object definition) + ViewController(object attribute)；
+   
+   ps: OrderSNViewController = Order(module name) + SN(developer name) + ViewController(object attribute)；
+   */
    ```
 
-   ​
+10. 对API的命名要求：
 
-6. 对API的命名要求：
-   如果是系统或者第三方库的分类的属性或者接口的命名必须添加类似‘sn_’的前缀。
-   其它的应该尽量言简意赅。（可以参考apple的格式）
+    - 如果是系统分类或者第三方库分类的属性和接口的命名必须添加类似`sn_`（developer name）的前缀。
 
-## 关于
+    - 其它的应该尽量言简意赅，（可以参考apple的格式）。
 
-1. 每个模块都将依赖于 ‘SNModuleKit’基础组件模块
+11. 
 
+## 关于模块化集成
+
+项目模块化后，每个模块都可以独立运行。对于独立开发的模块都需要统一集成到项目中，整个项目才算完整。以下提供几种集成解决方案供参考：
+
+- 本地手动集成
+- CocoaPods集成
+
+##### 本地手动集成
+
+独立开发的模块都放在本机上进行单独版本管理，等到需要集成到主项目时，再手动的拷贝过去放到主项目中，需要更新某个模块时再拷贝替换掉。这种方式来回的拷贝替换，对于大型的项目管理成本蛮高的，对于代码的版本管理和安全都是一种破坏。但有时候高明的方法往往都显得比较复杂，所以这是一种笨拙而简单的方案。
+
+##### CocoaPods集成
+
+通过CocoaPods集成类似于`pod update`更新项目所依赖的模块，就像更新所依赖的组件`AFNetworking`一样。此时的组件、模块还是别的什么，都是被添加到索引库能被pods索引的仓库。关键点是制作pod仓库，熟练了制作pod仓库之后，在项目中通过CocoaPods集成各个模块就易如反掌。通过CocoaPods集成也分两种情况，一种是集成公共仓库，一种是集成私有仓库，他们的区别就是：
+
+- 公共仓库是所有人都可以访问的，比如把仓库放到Github上，`.podspec`仓库索引文件也是放在CocoaPods开源的索引库中的，当然Github也提供私有库的创建只不过需要付费。
+
+- 私有仓库是私人指定的有所有权的仓库，包括`.podspec`仓库索引文件也是放在指定的私有仓库中。 
+
+Podfile文件内容大致长这个样子：
+
+```yaml
+# Uncomment the next line to define a global platform for your project
+platform :ios, '8.0'
+
+inhibit_all_warnings!
+
+#如果是私有库，需要添加私有索引库的镜像地址
+source 'https://gitee.com/snlo/privateSpec.git' 
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'xx' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for AiteCube
+
+  pod 'SNModuleKit'
+  pod 'ModulePublic'
+  
+  pod 'ModuleLogin'
+  pod 'ModuleFileHandle'
+
+  target 'xxTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'xxUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+```
+
+无论是公共仓库还是私有仓库都有个非常麻烦的地方，那就是每次仓库也就是模块更新、新增或者拆分等都需要对索引文件进行更新从新发布仓库版本。这里需要注意的是更新`.podspec`仓库索引文件时需要验证`.podspec`索引文件，而验证验证`.podspec`索引文件是非常耗时的操作。另外要是集成私有仓库还好，公共仓库的话CocoaPods开源的索引仓库更新起来还是挺费时的。关于如何制作pod仓库和如何创建私有索引库不是本文的重点，网上关于这方面的资料也是琳琅满目，建议参考<a href= "https://guides.cocoapods.org/" target="_blank">CocoaPods官方指南</a>少走弯路。
+
+##### 总结
+
+两种解决模块化集成的方案都各自有各自的优缺点，建议在模块较稳定的情况才使用CocoaPods集成，在团队成员非常少和模块不稳定的情况下采用本地手动集成。
+
+## 参考
+
+<a href= "https://en.wikipedia.org/wiki/Software_engineering" target="_blank">维基百科</a>
+
+<a href= "https://developer.apple.com/library/archive/navigation/" target="_blank">Apple官方文档</a>
+
+<a href= "https://guides.cocoapods.org/" target="_blank">CocoaPods官方指南</a>
