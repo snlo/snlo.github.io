@@ -8,6 +8,7 @@
 - <a href= "http://blog.devtang.com" target="_blank">唐巧的个人博客</a>、<a href= "https://onevcat.com" target="_blank">OneV's Den-喵神</a>、<a href= "http://blog.cnbang.net" target="_blank">JSPatch作者</a>、<a href= "https://draveness.me" target="_blank">看不懂标题的Draveness</a>、<a href= "https://halfrost.com" target="_blank">冰霜</a>、<a href= "http://blog.leichunfeng.com" target="_blank">雷纯锋的技术博客</a>、
 - <a href= "https://en.wikipedia.org/wiki/Design_Patterns" target="_blank">设计模式-wiki</a>、<a href= "https://sophia.javeriana.edu.co/~cbustaca/docencia/DSBP-2018-01/recursos/Erich%20Gamma,%20Richard%20Helm,%20Ralph%20Johnson,%20John%20M.%20Vlissides-Design%20Patterns_%20Elements%20of%20Reusable%20Object-Oriented%20Software%20%20-Addison-Wesley%20Professional%20%281994%29.pdf" target="_blank">设计模式-PDF</a>、<a href= "http://c2.com/cgi/fullSearch?search=SoftwareDesignPatternsIndex" target="_blank">软件设计模式索引</a>、<a href= "https://web.archive.org/web/20050212160351/http://www.bell-labs.com/user/cope/Patterns/ICSE96/icse.html" target="_blank">设计模式的工业经验</a>、<a href= "https://hillside.net/" target="_blank">PLoP会议</a>、
 - <a href= "https://archive.org" target="_blank">互联网档案</a>、
+- <a href= "https://commits.top/" target="_blank">最活跃的GitHub用户</a>、
 
 ## References
 
