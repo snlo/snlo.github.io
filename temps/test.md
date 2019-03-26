@@ -35,3 +35,46 @@
 <a href= "https://github.com/ChenYilong/iOSInterviewQuestions/blob/master/01%E3%80%8A%E6%8B%9B%E8%81%98%E4%B8%80%E4%B8%AA%E9%9D%A0%E8%B0%B1%E7%9A%84iOS%E3%80%8B%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88/%E3%80%8A%E6%8B%9B%E8%81%98%E4%B8%80%E4%B8%AA%E9%9D%A0%E8%B0%B1%E7%9A%84iOS%E3%80%8B%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88%EF%BC%88%E4%B8%8B%EF%BC%89.md#49-kvc%E5%92%8Ckvo%E7%9A%84keypath%E4%B8%80%E5%AE%9A%E6%98%AF%E5%B1%9E%E6%80%A7%E4%B9%88" target="_blank">《招聘一个靠谱的iOS -下》</a>
 
 <a href= "https://www.jianshu.com/p/836ac5f1b31d" target="_blank">基础题</a>、<a href= "http://www.cocoachina.com/ios/20190213/26321.html" target="_blank">200道题目</a>、
+
+
+
+
+
+
+
+Iphone - 传感器：
+
+协处理器 M7（Motion coprocessor，不是传感器）
+
+生物识别 - TouchID、FaceID -> LocalAuthentication（本地验证）
+
+压力传感器（3D Touch）<- TAPTIC Engine 振动器
+
+摄像头（广交、长焦）、图像传感器、光学防抖、闪烁传感器（Flicker sensor）
+
+麦克风、音响、多点触控屏幕
+
+Infared camera（红外摄像机）、Flood illuminator（泛光照明器）、Proximity sensor（接近传感器）、Ambient linght sensor（环境光传感器）、Speaker（扬声器）、Microphone（麦克风）、Front camera（前置摄像头）、Dot projector（点投影仪）-> 真深度摄像系统（深度传感器）
+
+加速度传感器（Accelerometer）
+
+湿度传感器（Moisture Sensor）、内部温度传感器（Internal Temperature Sensor）
+
+2G、3G、4G（LTE）、5G / Wi-Fi / 蓝牙（BlueTooth）/NFC（近场通信）
+
+GPS
+
+磁力传感器（Compass）
+
+陀螺仪（Gyroscope）六轴陀螺仪(iphone6)
+
+气压计（Barometer）
+
+
+
+
+
+
+
+
+
