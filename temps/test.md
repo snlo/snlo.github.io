@@ -54,3 +54,13 @@
 - UI设计、风格… ...
 - 交互体验
 - 广告投放机制、功能内购方式考虑
+
+## 关键词
+
+- 编辑 — edit
+- 极速剪辑 — Speed clip
+- 多媒体 — multimedia
+- 视屏 — video
+- 音频 — Audio
+- 铃声 — ring
+- 单纯 — simple
