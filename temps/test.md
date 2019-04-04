@@ -64,3 +64,8 @@
 - 音频 — Audio
 - 铃声 — ring
 - 单纯 — simple
+
+## 技能标签
+
+- FFmpeg
+- App Local Http Server
