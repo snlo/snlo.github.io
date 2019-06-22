@@ -131,3 +131,5 @@ friends: [{
   href: "https://www.w3.org/"
 
 }]
+
+theme: jekyll-theme-cayman
