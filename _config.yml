@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: SNLO 
+title: SNLO APP
 SEOTitle: SNLO | APP
 header-img: img/header_world.jpg
 email: snloveydus@gmail.com
@@ -24,7 +24,7 @@ url: "https://snlo.app" # the base hostname & protocol for your site, e.g. http:
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # avatar and Favicon
-avatar: /img/icon.png 
+avatar: /img/icon.png
 favicon: /img/favicon.ico
 
 # Publish posts or collection documents with a future date.
@@ -66,7 +66,7 @@ kramdown:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-exclude: 
+exclude:
   - README.md
 #   - Gemfile
 #   - Gemfile.lock
@@ -86,7 +86,7 @@ exclude:
 netease_comment: false
 
 # Analytics settings
-# Baidu Analytics 
+# Baidu Analytics
 # ba_track_id: [your track id]
 
 # Google Analytics
@@ -110,7 +110,7 @@ service-worker: true
 page-mathjax: false
 
 # Gitalk
-gitalk: 
+gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: db0469bd2240fc017d78                            #生成的clientID
   clientSecret: 62b65779044955f7d44eacd13a748e4fc3fd2e70    #生成的clientSecret
