@@ -95,7 +95,7 @@ ga_domain: snlo.app
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "APP Developer <br/> 究竟拿时间做了什么？"
+sidebar-about-description: "APP Developer <br/> Lazy Fingertip Mobile Internet"
 sidebar-avatar: /img/icon.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
