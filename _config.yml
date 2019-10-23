@@ -32,11 +32,11 @@ favicon: /img/favicon.ico
 
 # SNS settings
 RSS: true
-weibo_username:      1680308147
-zhihu_username:      sun-hao-35-85
+# weibo_username:      1680308147
+# zhihu_username:      sun-hao-35-85
 github_username:     snlo
 # twitter_username:    snloveydus
-jianshu_username:    9972b1f47ee2
+# jianshu_username:    9972b1f47ee2
 # facebook_username:   snlo
 # linkedin_username:   firstname-lastname-idxxxx
 email:               snloveydus@gmail.com
