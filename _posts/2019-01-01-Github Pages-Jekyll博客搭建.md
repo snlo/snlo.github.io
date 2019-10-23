@@ -91,7 +91,7 @@ $ sudo gem install -n/usr/local/bin bundler 	#重新安装'bundler'
 $ sudo gem instll -n/usr/local/bin jekyll 	#安装Jekyll
 $ jekyll new user_blog		#新建名为'user_blog'的Jekyll博客项目
 $ cd /users/mac_name/user_blog 	#cd到你刚刚新建的'user_blog'项目
-$ bundle bundle exec jekyll serve	#本地启动Jekyll博客项目，也可以使用'jekyll serve'命令
+$ bundle exec jekyll serve	#本地启动Jekyll博客项目，也可以使用'jekyll serve'命令
 #    Server address: http://127.0.0.1:4000/
 #  Server running... press ctrl-c to stop.
 #浏览器打开'http://127.0.0.1:4000/'便可实时预览博客效果
