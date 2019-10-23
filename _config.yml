@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: SNLO
 SEOTitle: SNLO | APP
-header-img: img/header_world.jpg
+header-img: img/未命名.webp
 email: snloveydus@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   APP描述
