@@ -11,14 +11,14 @@ tags:
 - FRP
 ---
 
-> ReactiveCocoa，由于ReactiveObjC实现，旨在为Cocoa框架提供便捷的函数式响应编程范式。
+> ReactiveCocoa，由ReactiveObjC实现，旨在为Cocoa框架提供便捷的函数式响应编程范式。
 
-## ReactiveCocoa能实现什么
-
-
-
-## 怎么实现的
+## Why
 
 
 
-## 具体如何使用
+## How
+
+
+
+## What
