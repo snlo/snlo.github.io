@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: SNLO
+author: snlo
 SEOTitle: SNLO | APP
 header-img: img/header_world.jpg
 email: snloveydus@gmail.com
@@ -49,7 +50,7 @@ paginate: 10
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 plugins:
   - jekyll-paginate
-  - jekyll-feed
+#  - jekyll-feed
 # Markdown settings
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
