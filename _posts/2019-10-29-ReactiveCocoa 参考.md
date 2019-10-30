@@ -11,14 +11,14 @@ tags:
 - FRP
 ---
 
-> ReactiveCocoa，由ReactiveObjC实现，旨在为Cocoa框架提供便捷的函数式响应编程范式。
+> Objective-C ReactiveCocoa被命名为ReactiveObjC，简称RAC，旨在为Cocoa框架提供便捷的函数式响应编程范式。在Swift版本中被拆分为ReactiveSwift和ReactiveCocoa，是纯粹Swift构建的。
 
-## Why
-
-
-
-## How
+## 本质，底层原理
 
 
 
-## What
+## 方法、流程、模式
+
+
+
+## 实施、工具、经验
