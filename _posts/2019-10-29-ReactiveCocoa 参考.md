@@ -22,8 +22,8 @@ tags:
 - Observable：可观察的对象，简单理解为观察者模式。
 - Operators：不同的语言实现都各自实现了一组运算符，有重叠的也有独特的。
 - Single：类似于Observable，但总是只发出一个值或错误的通知，而不会发出一系列值。
-- Subject：一种桥接或代理
-- Scheduler：
+- Subject：是一种桥接或代理，在 ReactiveX 的某些实现中可用，它既充当观察者，也充当可观察。
+- Scheduler：调度，如果要在多个Operators中运用多线程，可以通过指定某些Operators或特定的Observable在特定的Scheduler上进行操作来实现。
 
 <a href= "https://github.com/ReactiveCocoa/ReactiveObjC" target="_blank">ReactiveObjc</a>：受Rx启发的Objective-C框架，后更名为ReactiveCocoa（RAC）。
 
@@ -55,15 +55,74 @@ tags:
 
 重要的是可以用函数去创建、组合、过滤等来处理这些Data Stream，这就是**函数式响应式编程**。Stream也可以作为另一个Stream的输入，甚至多个Stream也可以作为另一个Stream的输入。你可以合并两个Stream，可以过滤Stream以获得只包含你感兴趣的事情的Stream，你也可以将数据值从一个Stream映射到另一个Stream。
 
-#### 操作
+## 实例
+
+#### 单击按钮事件流
+
+![button_click](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/191029/button_click.jpg)
+
+点击事件数据流是按时间顺序排列的一系列进行中的事件，它可以发出三种不同的事件，一个新值来自流的**next**事件，一个**error**事件，一个**complete**事件。例如，在包含该流的当前视图关闭时，会发出complete。
+
+通过定义在将发next时执行的函数，在发出error时的另一个函数以及发出complete时的另一个函数，来异步捕获这些发出的事件，有时候可以忽略最后两个，而只专注于为next事件定义的函数。对流的这种监听被定义为订阅（**subscribe**），定义的函数式观察者（**observer**），流是正在被观察的（**observable**），这也符合观察者设计模式。
+
+以上就是单击按钮事件流的函数响应式编程的思路，在不同框架下各自的实现如下：
+
+```objective-c
+// MARK: - import ReactiveObjC
+    [[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        NSLog(@"点击事件：%@",x);
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"错误：%@",error);
+    } completed:^{
+        NSLog(@"完成");
+    }];
+```
+
+```swift
+// MARK: - import ReactiveCocoa - ReactiveSwift
+    self.buttonTest.reactive.controlEvents(.touchUpInside).observe { (event) in
+        switch event {
+        case .value(let sender):
+            print("点击：\(sender)")
+        case .failed(let error):
+            print("错误：\(error)")
+        case .completed:
+            print("完成")
+        case .interrupted:
+            print("中断")
+        }
+    }
+```
+
+```swift
+// MARK: - import RxCocoa - RxSwift
+    let disposeBag = DisposeBag()
+    self.buttonTest.rx.controlEvent(.touchUpInside).subscribe(onNext: { (_) in
+        print("点击")
+    }, onError: { (error: Error) in
+        print("错误：\(error)")
+    }, onCompleted: {
+        print("完成")
+    }, onDisposed: {
+        print("处理掉了")
+    }).disposed(by: disposeBag)
+```
+
+几种实现虽然有所不同，但它们的思路是一致的。
+
+#### 双击按钮事件流
+
+当前点击事件的发生与上一次点击事件的发生的时间间隔假如为250ms，我们就定义为双击。在响应式编程中，我们需要创建从原始点击事件流转换或者过滤而来的新的双击事件流，然后再订阅它。
+
+这个双击事件流表示一个按钮被连续（自定义250ms时间间隔）点击了两次的事件，怎么得到这个流呢？常见的Reactive库中，每个Stream都附加了许多的Functional，比如：map、filter、scan等等，当调用某个函数时，会在原来的Stream的基础上返回一个新的Stream，并且它不会以任何的方式修改原始的Stream，在Reactive这似乎就是一个不变的特性。
+
+![map_scan](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/191029/map_scan.jpg)
+
+如上图，该map(c = 1)函数将替换每个发送值为‘1‘再映射到新的Stream。该scan( += 1)将Stream上的所有之前的值叠加产生新的Stream，再订阅它，当发生点击时响应当前总的点击次数。
+
+命令式编程就复杂多了，响应双击事件，需要保存状态的一些变量和计算时间间隔代码等一大堆的代码。在响应式编程中这就变得简单而清晰多了，下图为响应双击时间流的分析：
 
 
-
-## 方法、流程、模式
-
-
-
-## 实施、工具、经验
 
 ## 参考
 
