@@ -45,7 +45,7 @@ tags:
 - SignalProduver：创建价值流的延期工作。
 - Property：一个始终包含值的可观察框。
 - Action：具有预设操作的序列化工作程序。
-- Lifetime：限制观察范围
+- Lifetime：限制观察范围。
 
 <a href= "https://github.com/ReactiveX/RxSwift" target="_blank">RxSwift</a>：ReactiveX社区成员，是Rx的Swift实现。
 
