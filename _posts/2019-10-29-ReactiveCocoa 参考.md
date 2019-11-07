@@ -160,7 +160,7 @@ self.buttonTest.reactive.controlEvents(.touchUpInside)
 ```
 ###### RxCocoa - RxSwift：
 
-```c
+```swift
 self.buttonTest.rx
     .controlEvent(.touchUpInside).asObservable()
     .buffer(timeSpan: RxTimeInterval.milliseconds(250), count: 0, scheduler: MainScheduler.init())
