@@ -133,7 +133,8 @@ self.buttonTest.rx.controlEvent(.touchUpInside).subscribe(onNext: { (_) in
 
 ```swift
 [[[[[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside]
-    bufferWithTime:0.250 onScheduler:scheduler] map:^id _Nullable(RACTuple * _Nullable value) {
+   bufferWithTime:0.250 onScheduler:scheduler]
+   map:^id _Nullable(RACTuple * _Nullable value) {
     NSLog(@"映射：%@",value);
     return @(value.count);
 }] filter:^BOOL(id  _Nullable value) {
