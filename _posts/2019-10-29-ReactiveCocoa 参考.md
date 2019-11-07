@@ -49,15 +49,15 @@ tags:
 
 <a href= "https://github.com/ReactiveX/RxSwift" target="_blank">RxSwift</a>：ReactiveX社区成员，是Rx的Swift实现。
 
-## 原理
+# 原理
 
 **响应式编程是使用异步数据流进行编程**。实际上这很常见，事件总线或典型的点击事件本身就是异步事件流（Event Stream），你可以在该事件流上监听并作出响应（产生副作用）。任何数据值，比如变量、用户输入、属性、缓存、数据结构等都可以创建数据流（Data Stream），你可以监听这些数据流并作出响应。
 
 重要的是可以用函数去创建、组合、过滤等来处理这些Data Stream，这就是**函数式响应式编程**。Stream也可以作为另一个Stream的输入，甚至多个Stream也可以作为另一个Stream的输入。你可以合并两个Stream，可以过滤Stream以获得只包含你感兴趣的事情的Stream，你也可以将数据值从一个Stream映射到另一个Stream。
 
-## 实例
+# 实例
 
-#### 单击按钮事件流
+### 单击按钮事件流
 
 ![button_click](https://snlo.app/img/blog_img/191029/button_click.jpg)
 
@@ -67,7 +67,7 @@ tags:
 
 以上就是单击按钮事件流的函数响应式编程的思路，在不同框架下各自的实现如下：
 
-###### ReactiveObjC：
+##### ReactiveObjC：
 
 ```swift
 [[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -79,7 +79,7 @@ tags:
 }];
 ```
 
-###### ReactiveCocoa - ReactiveSwift：
+##### ReactiveCocoa - ReactiveSwift：
 
 ```swift
 self.buttonTest.reactive.controlEvents(.touchUpInside).observe { (event) in
@@ -96,7 +96,7 @@ self.buttonTest.reactive.controlEvents(.touchUpInside).observe { (event) in
 }
 ```
 
-###### RxCocoa - RxSwift：
+##### RxCocoa - RxSwift：
 
 ```swift
 let disposeBag = DisposeBag()
@@ -113,7 +113,7 @@ self.buttonTest.rx.controlEvent(.touchUpInside).subscribe(onNext: { (_) in
 
 几种实现虽然有所不同，但它们的思路是一致的。
 
-#### 双击按钮事件流
+### 双击按钮事件流
 
 当前点击事件的发生与上一次点击事件的发生的时间间隔假如为250ms，我们就定义为双击。在响应式编程中，我们需要创建从原始点击事件流转换或者过滤而来的新的双击事件流，然后再订阅它。
 
@@ -173,6 +173,6 @@ self.buttonTest.rx
 
 
 
-## 参考
+# 参考
 
 <a href= "https://gist.github.com/staltz/868e7e9bc2a7b8c1f754" target="_blank">《The introduction to Reactive Programming you've been missing》</a>
