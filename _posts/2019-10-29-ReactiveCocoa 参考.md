@@ -129,7 +129,7 @@ tags:
 
 实际上只需要4步就可以完成响应，首先通过`buffer(time:250ms, scheduler)`函数把连续250ms内的点击都累积到一个列表中，得到一个列表的stream，然后用`map(list.count)`函数把每个列表映射为一个列表长度的整数，然后再使用`filter(count == 2)`过滤出整数为2的数据，得到最终想要的stream，最后再订阅这个stream。能感受到它的清晰简单吗？下面是代码实现：
 
-- ReactiveObjC：
+###### ReactiveObjC：
 
 ```swift
 [[[[[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside]
@@ -147,8 +147,7 @@ tags:
     NSLog(@"完成");
 }];
 ```
-- ReactiveCocoa - ReactiveSwift：
-
+###### ReactiveCocoa - ReactiveSwift：
 
 ```swift
 self.buttonTest.reactive.controlEvents(.touchUpInside)
@@ -159,8 +158,7 @@ self.buttonTest.reactive.controlEvents(.touchUpInside)
         print("双击：\(resulet)")
 }
 ```
-- RxCocoa - RxSwift：
-
+###### RxCocoa - RxSwift：
 
 ```swift
 self.buttonTest.rx
