@@ -177,3 +177,9 @@ self.buttonTest.rx
 # 参考
 
 <a href= "https://gist.github.com/staltz/868e7e9bc2a7b8c1f754" target="_blank">《The introduction to Reactive Programming you've been missing》</a>
+
+<a href= "http://reactivex.io/documentation" target="_blank">ReactiveX</a>
+
+<a href= "http://reactivecocoa.io/" target="_blank">ReactiveCocoa</a>
+
+<a href= "https://github.com/ReactiveX/RxSwift" target="_blank">RxSwift</a>
