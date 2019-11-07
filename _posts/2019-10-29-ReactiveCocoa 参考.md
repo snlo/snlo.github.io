@@ -67,49 +67,49 @@ tags:
 
 以上就是单击按钮事件流的函数响应式编程的思路，在不同框架下各自的实现如下：
 
-- ReactiveObjC
+###### ReactiveObjC：
 
-  ```swift
-  [[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-      NSLog(@"点击事件：%@",x);
-  } error:^(NSError * _Nullable error) {
-      NSLog(@"错误：%@",error);
-  } completed:^{
-      NSLog(@"完成");
-  }];
-  ```
+```swift
+[[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+    NSLog(@"点击事件：%@",x);
+} error:^(NSError * _Nullable error) {
+    NSLog(@"错误：%@",error);
+} completed:^{
+    NSLog(@"完成");
+}];
+```
 
-- ReactiveCocoa - ReactiveSwift
+###### ReactiveCocoa - ReactiveSwift：
 
-  ```swift
-  self.buttonTest.reactive.controlEvents(.touchUpInside).observe { (event) in
-      switch event {
-      case .value(let sender):
-          print("点击：\(sender)")
-      case .failed(let error):
-          print("错误：\(error)")
-      case .completed:
-          print("完成")
-      case .interrupted:
-          print("中断")
-      }
-  }
-  ```
+```swift
+self.buttonTest.reactive.controlEvents(.touchUpInside).observe { (event) in
+    switch event {
+    case .value(let sender):
+        print("点击：\(sender)")
+    case .failed(let error):
+        print("错误：\(error)")
+    case .completed:
+        print("完成")
+    case .interrupted:
+        print("中断")
+    }
+}
+```
 
-- RxCocoa - RxSwift
+###### RxCocoa - RxSwift：
 
-  ```swift
-  let disposeBag = DisposeBag()
-  self.buttonTest.rx.controlEvent(.touchUpInside).subscribe(onNext: { (_) in
-      print("点击")
-  }, onError: { (error: Error) in
-      print("错误：\(error)")
-  }, onCompleted: {
-      print("完成")
-  }, onDisposed: {
-      print("处理掉了")
-  }).disposed(by: disposeBag)
-  ```
+```swift
+let disposeBag = DisposeBag()
+self.buttonTest.rx.controlEvent(.touchUpInside).subscribe(onNext: { (_) in
+    print("点击")
+}, onError: { (error: Error) in
+    print("错误：\(error)")
+}, onCompleted: {
+    print("完成")
+}, onDisposed: {
+    print("处理掉了")
+}).disposed(by: disposeBag)
+```
 
 几种实现虽然有所不同，但它们的思路是一致的。
 
@@ -129,7 +129,7 @@ tags:
 
 实际上只需要4步就可以完成响应，首先通过`buffer(time:250ms, scheduler)`函数把连续250ms内的点击都累积到一个列表中，得到一个列表的stream，然后用`map(list.count)`函数把每个列表映射为一个列表长度的整数，然后再使用`filter(count == 2)`过滤出整数为2的数据，得到最终想要的stream，最后再订阅这个stream。能感受到它的清晰简单吗？下面是代码实现：
 
-###### ReactiveObjC：
+##### ReactiveObjC：
 
 ```swift
 [[[[[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside]
@@ -147,7 +147,7 @@ tags:
     NSLog(@"完成");
 }];
 ```
-###### ReactiveCocoa - ReactiveSwift：
+##### ReactiveCocoa - ReactiveSwift：
 
 ```swift
 self.buttonTest.reactive.controlEvents(.touchUpInside)
@@ -158,7 +158,7 @@ self.buttonTest.reactive.controlEvents(.touchUpInside)
         print("双击：\(resulet)")
 }
 ```
-###### RxCocoa - RxSwift：
+##### RxCocoa - RxSwift：
 
 ```swift
 self.buttonTest.rx
