@@ -59,7 +59,7 @@ tags:
 
 #### 单击按钮事件流
 
-![button_click](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/191029/button_click.jpg)
+![button_click](https://snlo.app/img/blog_img/191029/button_click.jpg)
 
 点击事件数据流是按时间顺序排列的一系列进行中的事件，它可以发出三种不同的事件，一个新值来自流的**next**事件，一个**error**事件，一个**complete**事件。例如，在包含该流的当前视图关闭时，会发出complete。
 
@@ -116,11 +116,56 @@ tags:
 
 这个双击事件流表示一个按钮被连续（自定义250ms时间间隔）点击了两次的事件，怎么得到这个流呢？常见的Reactive库中，每个Stream都附加了许多的Functional，比如：map、filter、scan等等，当调用某个函数时，会在原来的Stream的基础上返回一个新的Stream，并且它不会以任何的方式修改原始的Stream，在Reactive这似乎就是一个不变的特性。
 
-![map_scan](/Users/snlo/Desktop/gitHub/snlo.github.io/img/blog_img/191029/map_scan.jpg)
+![map_scan](https://snlo.app/img/blog_img/191029/map_scan.jpg)
 
 如上图，该map(c = 1)函数将替换每个发送值为‘1‘再映射到新的Stream。该scan( += 1)将Stream上的所有之前的值叠加产生新的Stream，再订阅它，当发生点击时响应当前总的点击次数。
 
 命令式编程就复杂多了，响应双击事件，需要保存状态的一些变量和计算时间间隔代码等一大堆的代码。在响应式编程中这就变得简单而清晰多了，下图为响应双击时间流的分析：
+
+![double_click](https://snlo.app/img/blog_img/191029/double_click.jpg)
+
+实际上只需要4步就可以完成响应，首先通过buffer(time:250ms, scheduler)函数把连续250ms内的点击都累积到一个列表中，得到一个列表的stream，然后用map(list.count)函数把每个列表映射为一个列表长度的整数，然后再使用filter(count == 2)过滤出整数为2的数据，得到最终想要的stream，最后再订阅这个stream。能感受到它的清晰简单吗？下面是代码实现：
+
+```objective-c
+// MARK: - import ReactiveObjC
+    RACScheduler * scheduler = [RACScheduler scheduler];
+
+    [[[[[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside] bufferWithTime:0.250 onScheduler:scheduler] map:^id _Nullable(RACTuple * _Nullable value) {
+        NSLog(@"映射：%@",value);
+        return @(value.count);
+    }] filter:^BOOL(id  _Nullable value) {
+        NSLog(@"过滤：%@",value);
+        return [value integerValue] == 2;
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"双击结果：%@",x);
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"错误：%@",error);
+    } completed:^{
+        NSLog(@"完成");
+    }];
+```
+
+```swift
+// MARK: - import ReactiveCocoa - ReactiveSwift
+      self.buttonTest.reactive.controlEvents(.touchUpInside).collect(every: DispatchTimeInterval.milliseconds(250), on: QueueScheduler.main, skipEmpty: true, discardWhenCompleted: true)
+          .map{ $0.count }
+          .filter{ $0 == 2 }
+          .observeResult { (resulet) in
+              print("双击：\(resulet)")
+      }
+```
+
+```swift
+// MARK: - import RxCocoa - RxSwift
+    self.buttonTest.rx
+        .controlEvent(.touchUpInside).asObservable()
+        .buffer(timeSpan: RxTimeInterval.milliseconds(250), count: 0, scheduler: MainScheduler.init())
+        .map{ $0.count }
+        .filter{ $0 == 2 }
+        .bind { (_) in
+            print("双击")
+    }.disposed(by: disposeBag)
+```
 
 
 
