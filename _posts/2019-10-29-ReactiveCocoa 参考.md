@@ -67,7 +67,7 @@ tags:
 
 以上就是单击按钮事件流的函数响应式编程的思路，在不同框架下各自的实现如下：
 
-```objective-c
+```swift
 // MARK: - import ReactiveObjC
     [[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         NSLog(@"点击事件：%@",x);
@@ -126,11 +126,10 @@ tags:
 
 实际上只需要4步就可以完成响应，首先通过buffer(time:250ms, scheduler)函数把连续250ms内的点击都累积到一个列表中，得到一个列表的stream，然后用map(list.count)函数把每个列表映射为一个列表长度的整数，然后再使用filter(count == 2)过滤出整数为2的数据，得到最终想要的stream，最后再订阅这个stream。能感受到它的清晰简单吗？下面是代码实现：
 
-```objective-c
+```swift
 // MARK: - import ReactiveObjC
-    RACScheduler * scheduler = [RACScheduler scheduler];
-
-    [[[[[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside] bufferWithTime:0.250 onScheduler:scheduler] map:^id _Nullable(RACTuple * _Nullable value) {
+    [[[[[self.buttonTest rac_signalForControlEvents:UIControlEventTouchUpInside]
+        bufferWithTime:0.250 onScheduler:scheduler] map:^id _Nullable(RACTuple * _Nullable value) {
         NSLog(@"映射：%@",value);
         return @(value.count);
     }] filter:^BOOL(id  _Nullable value) {
@@ -147,12 +146,13 @@ tags:
 
 ```swift
 // MARK: - import ReactiveCocoa - ReactiveSwift
-      self.buttonTest.reactive.controlEvents(.touchUpInside).collect(every: DispatchTimeInterval.milliseconds(250), on: QueueScheduler.main, skipEmpty: true, discardWhenCompleted: true)
-          .map{ $0.count }
-          .filter{ $0 == 2 }
-          .observeResult { (resulet) in
-              print("双击：\(resulet)")
-      }
+self.buttonTest.reactive.controlEvents(.touchUpInside)
+.collect(every: DispatchTimeInterval.milliseconds(250), on: QueueScheduler.main, skipEmpty: true, discardWhenCompleted: true)
+.map{ $0.count }
+.filter{ $0 == 2 }
+.observeResult { (resulet) in
+    print("双击：\(resulet)")
+}
 ```
 
 ```swift
