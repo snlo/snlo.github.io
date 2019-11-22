@@ -172,7 +172,210 @@ self.buttonTest.rx
 
 # 基本运算符
 
+### creat:
 
+###### ReactiveObjC：
+
+```swift
+//创建
+RACSignal * signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+
+    for (int i = 0; i < 6; i ++) {
+        [subscriber sendNext:@(i)];
+    }
+    [subscriber sendCompleted];
+
+    return [RACDisposable disposableWithBlock:^{
+        NSLog(@"disposed");
+    }];
+}];
+
+//订阅
+[signal subscribeNext:^(id  _Nullable x) {
+    NSLog(@"next:%@",x);
+} error:^(NSError * _Nullable error) {
+    NSLog(@"error:%@",error);
+} completed:^{
+    NSLog(@"completed");
+}];
+```
+
+###### ReactiveCocoa - ReactiveSwift：
+
+```swift
+//创建
+let signal: Signal<Int, Error> = Signal { (observer, lifetime) in
+
+    DispatchQueue.main.async {
+        for i in 1...5 {
+            observer.send(value: i)
+        }
+        observer.sendCompleted()
+    }
+
+    lifetime.observeEnded {
+        print("disposed")
+    }
+}
+
+//订阅
+signal.observe { (event) in
+    switch event {
+    case .value(let n):
+        print("next:\(n)")
+        break
+    case .failed(let error):
+        print("error:\(error)")
+        break
+    case .interrupted:
+        print("interrupted")
+        break
+    case .completed:
+        print("completed")
+        break
+    }
+}
+```
+
+###### RxCocoa - RxSwift：
+
+```swift
+//创建
+let signal: Observable<Int> = Observable.create { (observer) -> Disposable in
+    for i in 1...5 {
+        observer.on(.next(i))
+    }
+    observer.onCompleted()
+    return Disposables.create {
+        print("disposed")
+    }
+}
+
+//订阅
+signal.subscribe(onNext: { (n) in
+    print("next:\(n)")
+}, onError: { (e) in
+    print("error:\(e)")
+}, onCompleted: {
+    print("completed")
+}, onDisposed: {
+    print("disposed")
+}).disposed(by: disposeBag)
+```
+
+### map:
+
+###### ReactiveObjC：
+
+```swift
+RACSignal * signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+
+    [subscriber sendNext:@"a"];
+    [subscriber sendNext:@"b"];
+    [subscriber sendNext:@"c"];
+    [subscriber sendCompleted];
+
+    return [RACDisposable disposableWithBlock:^{
+        NSLog(@"disposed");
+    }];
+}];
+
+[[signal map:^id _Nullable(NSString * _Nullable value) { //将小写字母映射为大写
+    return value.uppercaseString;
+}] subscribeNext:^(id  _Nullable x) {
+    NSLog(@"%@",x);
+}];
+```
+
+###### ReactiveCocoa - ReactiveSwift：
+
+```swift
+let (signal, observer) = Signal<String, Error>.pipe()
+
+signal
+    .map { $0.uppercased() } //将小写字母映射为大写
+    .observeResult { print($0) }
+
+observer.send(value: "a")
+observer.send(value: "b")
+observer.send(value: "c")
+```
+
+###### RxCocoa - RxSwift：
+
+```swift
+let signal: Observable<String> = Observable.create { (observer) -> Disposable in
+    observer.on(.next("a"))
+    observer.on(.next("b"))
+    observer.on(.next("c"))
+    observer.onCompleted()
+    return Disposables.create {
+        print("disposed")
+    }
+}
+
+signal
+    .map { $0.uppercased() } //将小写字母映射为大写
+    .subscribe { print($0) }
+    .disposed(by: disposeBag)
+```
+
+### filter:
+
+###### ReactiveObjC：
+
+```swift
+NSArray * source = @[@1, @2, @3, @4, @5, @6, @7, @8];
+
+[[[source.rac_sequence filter:^BOOL(id  _Nullable value) {
+    return [value integerValue] < 5; //过滤小于5的数据
+}] signal] subscribeNext:^(id  _Nullable x) {
+    NSLog(@"%@",x);
+}];
+```
+
+###### ReactiveCocoa - ReactiveSwift：
+
+```swift
+let (signal, observer) = Signal<Int, Error>.pipe()
+
+signal
+    .filter { $0 < 5 } //过滤小于5的数据
+    .observeResult { print($0) }
+
+for i in 1...8 {
+    observer.send(value: i)
+}
+```
+
+###### RxCocoa - RxSwift：
+
+```swift
+let signal: Observable<Int> = Observable.create { (observer) -> Disposable in
+    for i in 1...8 {
+        observer.onNext(i)
+    }
+    observer.onCompleted()
+    return Disposables.create {
+        print("disposed")
+    }
+}
+
+signal
+    .filter { $0 < 5 } //过滤小于5的数据
+    .subscribe { print($0) }
+    .disposed(by: disposeBag)
+```
+
+
+
+### other:
+
+###### ReactiveObjC：
+
+###### ReactiveCocoa - ReactiveSwift：
+
+###### RxCocoa - RxSwift：
 
 # 实例
 
