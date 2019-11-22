@@ -55,8 +55,6 @@ tags:
 
 重要的是可以用函数去创建、组合、过滤等来处理这些Data Stream，这就是**函数式响应式编程**。Stream也可以作为另一个Stream的输入，甚至多个Stream也可以作为另一个Stream的输入。你可以合并两个Stream，可以过滤Stream以获得只包含你感兴趣的事情的Stream，你也可以将数据值从一个Stream映射到另一个Stream。
 
-# 实例
-
 ### 单击按钮事件流
 
 ![button_click](https://snlo.app/img/blog_img/191029/button_click.jpg)
@@ -170,6 +168,48 @@ self.buttonTest.rx
     .bind { (_) in
         print("双击")
 }.disposed(by: disposeBag)
+```
+
+# 实例
+
+### 通知
+
+系统提供的通知在使用都需要手动在合适的时机移除通知。在响应式编程中是在取消订阅时移除通知观察者。
+
+###### ReactiveObjC：
+
+```swift
+//订阅通知观察者
+[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"notification_name" object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+    NSLog(@":%@",x.userInfo);
+}];
+    
+//发送通知
+[[NSNotificationCenter defaultCenter] postNotificationName:@"notification_name" object:nil userInfo:@{@"user_name":@"noti"}];
+```
+
+###### ReactiveCocoa - ReactiveSwift：
+
+```swift
+//订阅通知观察
+NotificationCenter.default.reactive.notifications(forName: .custome).take(during: reactive.lifetime).observeValues {[weak self] (n) in
+    guard let self = self else {return}
+    print("\(self):\(n.userInfo!)")
+}
+//发送通知
+NotificationCenter.default.post(name: .custome, object: nil, userInfo: ["user_name":"noti"])
+```
+
+###### RxCocoa - RxSwift：
+
+```swift
+//订阅通知观察
+NotificationCenter.default.rx.notification(.customeX, object: nil).asObservable().subscribe { (n) in
+    print(":\(n.element!.userInfo!)")
+}.disposed(by: disposeBag)
+
+//发送通知
+NotificationCenter.default.post(name: .customeX, object: nil, userInfo: ["user_name":"noti"])
 ```
 
 
