@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>items</key>
-	<array>
-		<dict>
-			<key>assets</key>
-			<array>
-				<dict>
-					<key>url</key>
-					<string>http://192.168.0.252/package/ColorV-Test-qa-5.20.0.10.ipa</string>
-					<key>kind</key>
-					<string>software-package</string>
-				</dict>
-			</array>
-			<key>metadata</key>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+	<dict>
+		<key>items</key>
+		<array>
 			<dict>
-				<key>title</key>
-				<string>测试环境</string>
-				<key>kind</key>
-				<string>software</string>
-				<key>bundle-version</key>
-				<string>7.0.18</string>
-				<key>bundle-identifier</key>
-				<string>snlo.WeChatPlus</string>
+				<key>assets</key>
+				<array>
+					<dict>
+						<key>url</key>
+						<string>https://github.com/snlo/snlo.github.io/releases/download/0.0.1/Target.ipa</string>
+						<key>kind</key>
+						<string>software-package</string>
+					</dict>
+				</array>
+				<key>metadata</key>
+				<dict>
+					<key>title</key>
+					<string>微信Plus测试版本</string>
+					<key>kind</key>
+					<string>software</string>
+					<key>bundle-version</key>
+					<string>7.0.18</string>
+					<key>bundle-identifier</key>
+					<string>snlo.WeChatPlus</string>
+				</dict>
 			</dict>
-		</dict>
-	</array>
-</dict>
-</plist>
+		</array>
+	</dict>
+	</plist>
