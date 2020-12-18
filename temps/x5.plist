@@ -9,7 +9,8 @@
 				<array>
 					<dict>
 						<key>url</key>
-						<string>https://github.com/snlo/snlo.github.io/releases/download/0.0.1/Target.ipa</string>
+						<!-- <string>https://github.com/snlo/snlo.github.io/releases/download/0.0.1/Target.ipa</string> -->
+            <string>https://github.com/snlo/demotest/releases/download/v0.0.1/default.ipa</string> 
 						<key>kind</key>
 						<string>software-package</string>
 					</dict>
@@ -17,7 +18,7 @@
 				<key>metadata</key>
 				<dict>
 					<key>title</key>
-					<string>微信Plus测试版本</string>
+					<string>微信</string>
 					<key>kind</key>
 					<string>software</string>
 					<key>bundle-version</key>
