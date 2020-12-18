@@ -15,7 +15,7 @@
      <string>software-package</string>
      <key>url</key>
      <!-- http或者https链接的ipa文件地址 -->
-     <string>https://ad.infoxgame.com/YinHuOA-H5/app/ios/yh.ipa</string>
+     <string>https://drive.google.com/file/d/1hxwD9F_AOs-B8XgrisUMm55F-PfHQqO-/view?usp=sharing</string>
     </dict>
     <dict>
      <!--KEY 测试后建议缩短-->
@@ -25,7 +25,7 @@
      <true/>
      <key>url</key>
      <!-- http或者https链接的图片地址，可直接使用app对应的icon（分辨率没强制要求） -->
-     <string>https://ad.infoxgame.com/YinHuOA-H5/images/logo_im.png</string>
+     <string>https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1735300731,83723593&fm=26&gp=0.jpg</string>
     </dict>
     <dict>
      <key>kind</key>
@@ -34,14 +34,14 @@
      <true/>
      <key>url</key>
      <!-- http或者https链接的小图片地址，可直接使用app对应的icon（分辨率没强制要求） -->
-     <string>https://ad.infoxgame.com/YinHuOA-H5/images/logo_im.png</string>
+     <string>https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1735300731,83723593&fm=26&gp=0.jpg</string>
     </dict>
    </array>
    <key>metadata</key>
    <dict>
     <key>bundle-identifier</key>
     <!-- BundleID，就是新建app时的包名 -->
-    <string>com.yinhu.yhht</string>
+    <string>snlo.WeChatPlus</string>
     <key>bundle-version</key>
     <!-- 版本号-必变 -->
     <string>1.0.0</string>
