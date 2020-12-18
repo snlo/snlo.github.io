@@ -18,13 +18,13 @@
 				<key>metadata</key>
 				<dict>
 					<key>title</key>
-					<string>微信</string>
+					<string>聚好抢</string>
 					<key>kind</key>
 					<string>software</string>
 					<key>bundle-version</key>
-					<string>7.0.18</string>
+					<string>1.05.0</string>
 					<key>bundle-identifier</key>
-					<string>snlo.WeChatPlus</string>
+					<string>aiera.ju.bypass.buy.JUPass</string>
 				</dict>
 			</dict>
 		</array>
